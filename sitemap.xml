@@ -1,49 +1,28 @@
+---
+layout:
+---
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  {% for post in site.posts %}
+    <url>
+      <loc>http://jhipster.github.io{{ post.url }}</loc>{% if post.lastmod != null %}
+      <lastmod>{{ post.lastmod | date_to_xmlschema }}</lastmod>{% endif %}
+      <changefreq>daily</changefreq>
+      <priority>0.5</priority>
+    </url>
+  {% endfor %}
   <url>
-    <loc>http://regularjs.github.io/blog/2014/07/26/2014-7-26-animation-rethink/</loc>
-    <lastmod>2015-07-09T10:05:00.000Z</lastmod>
+      <loc>http://jhipster.github.io/presentation</loc>
+      <changefreq>daily</changefreq>
+      <priority>0.6</priority>
   </url>
-  
-  <url>
-    <loc>http://regularjs.github.io/blog/2015/02/26/template-technology/</loc>
-    <lastmod>2015-07-09T10:05:00.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://regularjs.github.io/index.html</loc>
-    <lastmod>2015-07-09T10:05:00.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://regularjs.github.io/example/modal.html</loc>
-    <lastmod>2015-07-09T10:05:00.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://regularjs.github.io/example/pager.html</loc>
-    <lastmod>2015-07-09T10:05:00.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://regularjs.github.io/example/slider.html</loc>
-    <lastmod>2015-07-09T10:05:00.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://regularjs.github.io/example/todomvc.html</loc>
-    <lastmod>2015-07-09T10:05:00.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://regularjs.github.io/example/markdown.html</loc>
-    <lastmod>2015-01-30T04:47:19.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>http://regularjs.github.io/example/performance.html</loc>
-    <lastmod>2015-01-30T04:47:19.000Z</lastmod>
-  </url>
-  
+  {% for page in site.pages %}{% if page.sitemap != null and page.sitemap != empty and page.sitemap.priority != null and page.url  %}
+      <url>
+        <loc>http://jhipster.github.io{{ page.url }}</loc>{% if page.sitemap.lastmod != null %}
+        <lastmod>{{ page.sitemap.lastmod | date_to_xmlschema }}</lastmod>{% endif %}
+        <changefreq>daily</changefreq>
+        <priority>{{ page.sitemap.priority }}</priority>
+       </url>
+    {% endif %}
+  {% endfor %}
 </urlset>

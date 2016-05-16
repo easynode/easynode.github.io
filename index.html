@@ -1,258 +1,377 @@
-<!DOCTYPE html>
-<html>
-<head prefix="og: http://ogp.me/ns#">
-    <meta charset="utf-8">
-    <title>Regularjs - A concise, flexible framework for creating data-driven component</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link rel="shortcut icon" href="/icon.png">
-    <link rel="canonical" href="http://regularjs.github.io/index.html">
-    <link rel="stylesheet" href="/bower_components/codemirror/lib/codemirror.css" type="text/css">
-
-    <link rel="stylesheet" href="/css/style.css" type="text/css">
-
-
-    <meta name="description" content="A concise, flexible framework for creating  data-driven component">
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="home">
-    <meta property="og:url" content="http://regularjs.github.io/index.html">
-    <meta property="og:site_name" content="Regularjs">
-    <meta property="og:description" content="A concise, flexible framework for creating  data-driven component">
-    <meta property="og:image" content="image/fedlogo.png">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="home">
-    <meta name="twitter:description" content="A concise, flexible framework for creating  data-driven component">
-    <meta name="twitter:site" content="@regularjs">
-
-
-    <script>
-        (function (i, s, o, g, r, a, m) {
-            i['GoogleAnalyticsObject'] = r;
-            i[r] = i[r] || function () {
-                        (i[r].q = i[r].q || []).push(arguments)
-                    }, i[r].l = 1 * new Date();
-            a = s.createElement(o),
-                    m = s.getElementsByTagName(o)[0];
-            a.async = 1;
-            a.src = g;
-            m.parentNode.insertBefore(a, m)
-        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-
-        ga('create', 'UA-54220110-1', 'regularjs.github.io');
-        ga('send', 'pageview');
-    </script>
-
-</head>
-
-<body>
-<header class="g-top" id='header'>
-    <div class="m-nav m-nav-2 g-cnt">
-        <div class="logo"><a href="/" class="inner"><img src="/image/regular-icon-neg.png" alt="" with=50 height=50></a>
-        </div>
-
-        <ul class="nav">
-
-            <li><a href="/example/markdown.html" class=" inner">Example</a></li>
-
-            <li><a href="/guide" class=" inner">Guide</a></li>
-
-            <li><a href="/reference/" class=" inner">Reference</a></li>
-
-            <li><a href="/blog/" class=" inner">Blog</a></li>
-
-            <li><a href="https://github.com/regularjs/regular" class=" inner">Github</a></li>
-
-            <li><a href="#" id="search-btn" class="icon-search2  st-search-launcher icon" title="Search"></a></li>
-
-        </ul>
-    </div>
-</header>
-
-
-<header class="g-hd" id="header">
-
-    <div class="m-slogan">
-        <div class="slogan">
-            <h2 id="slogan">Regular</h2>
-
-            <p>a concise, flexible framework for creating data-driven component</p>
-
-            <div class="btns">
-                <a href="https://github.com/regularjs/regular" class="u-btn u-btn-s1" target="_blank" rel="external">Source
-                    on Github</a>
-                <a href="https://github.com/regularjs/regular/archive/master.zip" class="u-btn u-btn-s1" target="_blank"
-                   rel="external">Download Latest</a>
-            </div>
-            <div class="img">
-                <p>BUILT BY</p>
-                <a href="https://github.com/NetEase" target="_blank" rel="external">
-                    <img src="image/fedlogo.png" alt="NetEaseWD">
-                </a>
-            </div>
-            <div class="social">
-                <iframe src="http://ghbtns.com/github-btn.html?user=regularjs&repo=regular&type=watch&count=true"
-                        allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe>
-                <iframe src="http://ghbtns.com/github-btn.html?user=regularjs&repo=regular&type=fork&count=true"
-                        allowtransparency="true" frameborder="0" scrolling="0" width="95" height="20"></iframe>
-                <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://regularjs.github.io/"
-                   data-text="regularjs.js- A concise, flexible framework for creating  data-driven component"
-                   data-dnt="true" target="_blank" rel="external">Tweet</a>
-                <script>!function (d, s, id) {
-                    var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
-                    if (!d.getElementById(id)) {
-                        js = d.createElement(s);
-                        js.id = id;
-                        js.src = p + '://platform.twitter.com/widgets.js';
-                        fjs.parentNode.insertBefore(js, fjs);
-                    }
-                }(document, 'script', 'twitter-wjs');</script>
+---
+layout: default
+layout_grid: true
+home: true
+angularjs: true
+title: JHipster home
+sitemap:
+    priority: 1.0
+    lastmod: 2016-04-17T00:00:00-00:00
+---
+<div ng-app="jhipster.home" ng-controller="HomeController" class="home-container">
+    <!-- Header -->
+    <header class="home-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="logo-big"><img class="img-responsive" src="img/logo-jhipster-drink-coffee.png" alt=""></div>
+                    <div class="intro-text">
+                        <span class="brand">Greetings, Java Hipster!</span>
+                        <hr class="star-light">
+                        <div class="row stats">
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                <a href="https://www.npmjs.com/package/generator-jhipster" target="_blank">
+                                    <div class="card dark summary-inline">
+                                        <div class="card-body">
+                                            <i class="icon fa fa-download fa-3x"></i>
+                                            <div class="content" ng-cloak>
+                                                <div class="title">{(npmDownloads)}</div>
+                                                <div class="sub-title">Downloads in last 30 days</div>
+                                            </div>
+                                            <div class="clear-both"></div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                <a href="https://github.com/jhipster/generator-jhipster" target="_blank">
+                                    <div class="card dark summary-inline">
+                                        <div class="card-body">
+                                            <i class="icon fa fa-github fa-3x"></i>
+                                            <div class="content" ng-cloak>
+                                                <div class="title">{(gitConfig.stargazers_count)}</div>
+                                                <div class="sub-title">Stars</div>
+                                            </div>
+                                            <div class="clear-both"></div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                <a href="https://github.com/jhipster/generator-jhipster/contributors" target="_blank">
+                                    <div class="card dark summary-inline">
+                                        <div class="card-body">
+                                            <i class="icon fa fa-users fa-3x"></i>
+                                            <div class="content" ng-cloak>
+                                                <div class="title">{(gitConftributors)}</div>
+                                                <div class="sub-title">Contributors</div>
+                                            </div>
+                                            <div class="clear-both"></div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</header>
-
-<div class="g-bd">
-    <div class="m-intro">
-        <h2> Creating Component with MVVM Pattern</h2>
-
-        <p><em> you will enjoy it just like you enjoy angularjs :)</em></p>
-
-        <div class="sec">
-            <em class="icon-bulb icon"></em>
-
-            <h3>Powerful</h3>
-
-            <p> live templating is string-based, take more control on templating logic.</p>
+    </header>
+    <!-- about and news section -->
+    <section id="about" class="home-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="brand">JHipster news and events</h2>
+                    <hr class="star-primary">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div>
+                        <p>
+                            <ul>
+                                <li>JHipster 3 is out! Check out our <a href="{{ site.url }}/2016/03/23/jhipster-release-3.0.0.html">release notes</a>.</li>
+                                <li>Julien Dubois and Matt Raible will both present <a href="http://devoxx.fr/" target="_blank">a JHipster talk at Devoxx France</a> in Paris, France on April, 21st and 22nd</li>
+                                <li>Lazaro Prates Júnior will do a JHipster presentation at <a href="http://www.thedevelopersconference.com.br/tdc/2016/florianopolis/trilha-java" target="_blank">the developer's conference</a> in Florianopolis, Brazil on May, 14th and 22nd</li>
+                                <li>Matt Raible will do his <a href="http://cfp.devoxx.co.uk/2016/talk/OLG-0920/Get_Hip_with_JHipster:_Spring_Boot_+_AngularJS_+_Bootstrap" target="_blank">Get Hip with JHipster talk</a> at Devoxx UK in London, UK on June 8th-10th</li>
+                                <li>Ippon USA will host <a href="http://www.ipponusa.com/training/jhipster-master/" target="_blank">a JHipster training</a> in Washington, DC on July, 27th</li>
+                                <li>The JHipster mini-book by Matt Raible <a href="http://www.infoq.com/minibooks/jhipster-mini-book" target="_blank">is available for free at InfoQ</a></li>
+                            </ul>
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="sec">
-            <em class="icon-paperplane icon"></em>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="brand">What is JHipster?</h2>
+                    <hr class="star-primary">
+                </div>
+            </div>
+            <div class="row">
+                <span class="title text-center">
+                    <div class="head-icons">
+                        <a href="http://yeoman.io/" target="_blank"><img src="img/logo-yeoman.png" class="project-icon img-responsive"></a> <i class="fa fa-4x">+</i>
+                        <a href="http://projects.spring.io/spring-boot/" target="_blank"><img src="img/logo-spring-boot.png" class="project-icon img-responsive"></a> <i class="fa fa-4x">+</i> <a href="https://angularjs.org/" target="_blank"><img src="img/logo-angularjs.png" class="project-icon img-responsive"></a><br class="visible-xs"> <i class="fa fa-4x">=</i> <a href="/"><img src="img/logo-jhipster-small2x.png" class="project-icon img-responsive"></a>
+                    </div>
+                    <p class="lead">
+                        JHipster is a
+                        <a href="http://yeoman.io/" target="_blank">Yeoman generator</a>,
+                        used to create a
+                        <a href="http://projects.spring.io/spring-boot/" target="_blank">Spring Boot</a> + <a href="https://angularjs.org/" target="_blank">AngularJS</a>
+                        project. <br>
+                    </p>
+                </span>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <h2 class="hipster-font brand">Goal</h2>
 
-            <h3>Concise</h3>
+                    <p>
+                        Our goal is to generate for you a complete and modern Web app, unifying:
+                    </p>
+                    <ul>
+                        <li>A high-performance and robust Java stack on the server side with Spring Boot</li>
+                        <li>A sleek, modern, mobile-first front-end with AngularJS and Bootstrap</li>
+                        <li>A powerful workflow to build your application with Yeoman, Bower, Gulp and Maven</li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <h2 class="hipster-font brand">Sample &amp; Sources</h2>
 
-            <p>data-binding, directive, filter, event and animation... all of them is supported out of box with concise
-                API </p>
+                    <p>
+                        You can checkout a sample generated application
+                        <a href="https://github.com/jhipster/jhipster-sample-app" target="_blank">here</a>.
+                    </p>
+
+                    <p>
+                        JHipster is Open Source, and all development is done on
+                        <a href="https://github.com/jhipster/generator-jhipster" target="_blank">GitHub</a>
+                    </p>
+                    <ul>
+                        <li> If you want to code with us, feel free to join!</li>
+                        <li> If you like the project, please give us a star on GitHub</li>
+                    </ul>
+                </div>
+            </div>
         </div>
-        <div class="sec">
-            <em class="icon-diamond icon"></em>
+    </section>
 
-            <h3>Flexible</h3>
-
-            <p>compeletely self-contained, easily integrated and well encapsulation. make it be friendly with
-                large-project </p>
+    <!-- Stack Section -->
+    <section class="success home-section" id="opts">
+        <div class="row no-margin">
+            <div class="col-lg-12 text-center">
+                <h2 class="brand">Client side options</h2>
+                <hr class="star-light">
+            </div>
         </div>
-        <div class="more">
-            <a href="https://github.com/regularjs/regular" target="_blank" rel="external">Learn more About Regularjs
-                →</a>
+        <div class="row stack-container no-margin">
+            <ul class="text-center stacks">
+                <li class="clip img-circle">
+                    <img src="img/svg/html-5.svg" />
+                    <span class="title_sub_tech">HTML5</span>
+                </li>
+                <li class="clip img-circle">
+                    <img src="img/svg/css-3.svg" />
+                    <span class="title_sub_tech">CSS3</span>
+                </li>
+                <li class="clip img-circle">
+                    <img src="img/svg/bootstrap.svg" />
+                    <span class="title_sub_tech">Bootstrap</span>
+                </li>
+                <li class="clip img-circle new">
+                    <img src="img/svg/angular.svg" />
+                    <span class="title_sub_tech">AngularJS</span>
+                </li>
+                <li class="clip img-circle">
+                    <img src="img/svg/jquery.svg" class="width white-inv"/>
+                    <span class="title_sub_tech">JQuery</span>
+                </li>
+                <li class="clip img-circle new">
+                    <img src="img/icons/websocket.png" class="invert-hover"/>
+                    <span class="title_sub_tech">Websockets</span>
+                </li>
+                <li class="clip img-circle new">
+                    <img src="img/svg/bower.svg"/>
+                    <span class="title_sub_tech">Bower</span>
+                </li>
+                <li class="clip img-circle new">
+                    <img src="img/svg/gulp.svg" class="height" />
+                    <span class="title_sub_tech">Gulp</span>
+                </li>
+                <li class="clip img-circle new">
+                    <img src="img/svg/sass.svg" class="height" />
+                    <span class="title_sub_tech">Sass</span>
+                </li>
+                <li class="clip img-circle new">
+                    <img src="img/svg/browsersync.svg" />
+                    <span class="title_sub_tech">Browsersync</span>
+                </li>
+                <li class="clip img-circle new">
+                    <img src="img/svg/karma.svg" />
+                    <span class="title_sub_tech">Karma</span>
+                </li>
+                <li class="clip img-circle new">
+                    <img src="img/icons/protarctor.png" />
+                    <span class="title_sub_tech">Protractor</span>
+                </li>
+                <li class="clear"></li>
+            </ul>
         </div>
+        <div class="row no-margin">
+            <div class="col-lg-12 text-center">
+                <h2 class="brand">Server side options</h2>
+                <hr class="star-light">
+            </div>
+        </div>
+        <div class="row no-margin">
+            <ul class="text-center stacks">
+                <li class="clip img-circle">
+                    <img src="img/icons/spring-boot.png" />
+                    <span class="title_sub_tech">Spring Boot</span>
+                </li>
+                <li class="clip img-circle">
+                    <img src="img/icons/spring.png"/>
+                    <span class="title_sub_tech">Spring Security</span>
+                </li>
+                <li class="clip img-circle new">
+                    <img src="img/icons/netflix.png"/>
+                    <span class="title_sub_tech">Netflix OSS</span>
+                </li>
+                <li class="clip img-circle new">
+                    <img src="img/icons/gradle-new.png" class="white-inv"/>
+                    <span class="title_sub_tech">Gradle</span>
+                </li>
+                <li class="clip img-circle new">
+                    <img src="img/icons/maven.png" class="white-inv width" />
+                    <span class="title_sub_tech">Maven</span>
+                </li>
+                <li class="clip img-circle">
+                    <img src="img/svg/hibernate.svg" />
+                    <span class="title_sub_tech">Hibernate</span>
+                </li>
+                <li class="clip img-circle new">
+                    <img src="img/icons/liquibase.gif" class="width" />
+                    <span class="title_sub_tech">Liquibase</span>
+                </li>
+                <li class="clip img-circle new">
+                    <img src="img/svg/mysql.svg" />
+                    <span class="title_sub_tech">MySQL</span>
+                </li>
+                <li class="clip img-circle new">
+                    <img src="img/svg/postgresql.svg" class="height" />
+                    <span class="title_sub_tech">PostgreSQL</span>
+                </li>
+                <li class="clip img-circle new">
+                    <img src="img/svg/oracle.svg" class="width" />
+                    <span class="title_sub_tech">Oracle</span>
+                </li>
+                <li class="clip img-circle new">
+                    <img src="img/icons/mongo.png" class="invert-hover"/>
+                    <span class="title_sub_tech">MongoDB</span>
+                </li>
+                <li class="clip img-circle new">
+                    <img src="img/svg//cassandra.svg" class="white-inv" />
+                    <span class="title_sub_tech">Cassandra</span>
+                </li>
+                <li class="clip img-circle new">
+                    <img src="img/icons/ehcache.png" />
+                    <span class="title_sub_tech">EhCache</span>
+                </li>
+                <li class="clip img-circle new">
+                    <img src="img/icons/Hazelcast.png" class="white-inv" />
+                    <span class="title_sub_tech">Hazelcast</span>
+                </li>
+                <li class="clip img-circle new">
+                    <img src="img/svg/elasticsearch.svg"/>
+                    <span class="title_sub_tech">ElasticSearch</span>
+                </li>
+                <li class="clip img-circle new">
+                    <img src="img/icons/thymeleaf.png"/>
+                    <span class="title_sub_tech">Thymeleaf</span>
+                </li>
+                <li class="clip img-circle new">
+                    <img src="img/icons/gatling.png"/>
+                    <span class="title_sub_tech">Gatling</span>
+                </li>
+                <li class="clip img-circle new">
+                    <img src="img/svg/cucumber.svg"/>
+                    <span class="title_sub_tech">Cucumber</span>
+                </li>
+                <li class="clear"></li>
+            </ul>
+        </div>
+    </section>
 
-    </div>
+    <!-- quick start Section -->
+    <section class="home-section" id="quick">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="brand">Quick Start</h2>
+                    <hr class="star-primary">
+                </div>
+            </div>
+            <div class="row text-center">
+                <div class="col-lg-12">
+                    <p>Install JHipster <code>npm install -g generator-jhipster</code></p>
+                    <p>Create a new directory and go into it <code>mkdir myApp && cd myApp</code></p>
+                    <p>Run JHipster and follow instructions on screen <code>yo jhipster</code></p>
+                    <p>Model your entities with <a href="{{ site.url }}/jdl-studio/" target="_blank">JDL Studio</a> and generate them with <code>yo jhipster:import-jdl yourJdlFile.jh</code></p>
+                </div>
+                <div class="col-lg-12">
+                    <p><small>* Assuming you have already installed <a href="http://www.oracle.com/technetwork/java/javase/downloads/index.html" target="_blank">Java</a>, <a href="http://git-scm.com/" target="_blank">Git</a>, <a href="http://nodejs.org/" target="_blank">Node.js</a>, <a href="http://bower.io/#install-bower" target="_blank">Bower</a>, <a href="http://yeoman.io/learning/index.html" target="_blank">Yeoman</a> and <a href="https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md" target="_blank">Gulp</a></small></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="success home-section" id="modules" ng-controller="ModuleListCtrl">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="brand">Modules</h2>
+                    <hr class="star-light">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <div class="row control-group">
+                        <div class="form-group col-xs-12 floating-label-form-group controls">
+                            <input type="text" ng-model="searchText" class="form-control search-text" placeholder="Search" id="name" required data-validation-required-message="Please enter a module to search">
+                            <p class="help-block text-danger"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center">
+                <p>Top trending modules</p>
+                <br>
+            </div>
+            <div class="row">
+                <div ng-cloak ng-repeat="module in modules | filter: searchText | orderBy: '-downloads' | limitTo:16">
+                    <div class="clearfix" ng-if="$index % 4 == 0"></div>
+                    <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+                        <a ng-href="{{ site.url }}/modules/marketplace/#/details/{(module.name[0])}"
+                            title="{(module.description[0])}">
+                            <div class="card dark module summary-inline">
+                                <div class="card-body">
+                                    <i class="icon fa fa-cube fa-3x"></i>
+                                    <div class="content">
+                                        <div class="title fontSmall">{(module.name[0] | jhiModuleFilter)}</div>
+                                        <div class="sub-title"><span class="fa fa-user"></span> &nbsp; {(module.author.join(','))} &nbsp; | &nbsp; <span class="fa fa-download"></span> &nbsp; {(module.downloads)}</div>
+                                    </div>
+                                    <div class="clear-both"></div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 </div>
-
-<div class="m-start">
-    <a class="full" href="/guide">Getting Start with Regularjs's Guide <span class="icon-redo2"></span> </a>
-</div>
-<div class="m-demo">
-    <h2>OR CHECK THE DEMO</h2>
-
-    <div id="demo-html" data-title="template" class="demo"></div>
-    <div data-title="javascript" class="demo demo-2">
-        <div id="demo-js-1" class="demo_sub"></div>
-        <div id="demo-js" class=""></div>
-        <div id="demo-js-3" class="demo_sub"></div>
-
-    </div>
-    <div class="console">
-        <a class="u-btn u-btn-block j-run" href="#">RUN</a>
-
-        <div id="demo-view"></div>
-    </div>
-</div>
-
-
-<script id="example" type="text/regularjs">
-<div class="m-todo">
-{#if !username}
-  Friend, please <a href='#' on-click={this.login()}>Login</a>
-{#else}
-  Welcome, {username} <a href='javascript:;' on-click={username = ''}>Logout</a>
-  <input on-enter={this.add(draft)} r-model={draft}/>
-  <ul class='list'>
-    <h3>you have {todos.length} todos </h3>
-    {#list todos as todo}
-      <li class={todo.compeleted? 'compeleted': ''}>
-        {todo.content} <a href='#' on-click={this.remove(todo_index)}>X</a> 
-      </li>
-    {/list}
-  </ul>
-{/if}
-</div>
-
-
-
-
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "url": "http://jhipster.github.io",
+  "logo": "http://jhipster.github.io/images/logo-jhipster.png",
+  "name" : "JHipster",
+  "sameAs" : [ "https://twitter.com/java_hipster",
+    "https://github.com/jhipster/generator-jhipster"]
+}
 </script>
-
-
-<footer class="m-footer">
-    <p class="license">Release under <a href="https://github.com/regularjs/regular/blob/master/LICENSE" target="_blank">MIT
-        License</a>| Copyright&nbsp;©&nbsp;2014&nbsp;&nbsp;<a href="https://leeluolee.github.io" target="_blank">@leeluolee</a>.
-        Reserved</p>
-
-    <p class="rights"> Background from <a href="http://subtlepatterns.com/shattered/" target="_blank">Shattered</a> |
-        powered by <a href="//hexo.io">Hexo</a></p>
-
-</footer>
-
-
-<!-- Disqus -->
-<script>
-    var disqus_shortname = 'regularjs';
-
-    var disqus_url = 'http://regularjs.github.io/index.html';
-
-
-</script>
-
-<!-- Swiftype -->
-<script>
-    var Swiftype = window.Swiftype || {};
-    (function () {
-        Swiftype.key = 'fDxc-hEngMPFuZ1VP_FJ';
-        /** DO NOT EDIT BELOW THIS LINE **/
-        var script = document.createElement('script');
-        script.type = 'text/javascript';
-        script.async = true;
-        script.src = "//s.swiftypecdn.com/embed.js";
-        var entry = document.getElementsByTagName('script')[0];
-        document.getElementsByTagName('script')[0].parentNode.insertBefore(script, entry);
-    }());
-</script>
-<script src="/bower_components/jquery/dist/jquery.min.js" type="text/javascript"></script>
-
-<script src="/bower_components/regularjs/dist/regular.min.js" type="text/javascript"></script>
-
-<script src="/bower_components/codemirror/lib/codemirror.js" type="text/javascript"></script>
-
-<script src="/bower_components/codemirror/mode/javascript/javascript.js" type="text/javascript"></script>
-
-<script src="/bower_components/codemirror/mode/xml/xml.js" type="text/javascript"></script>
-
-
-<script async src="//codepen.io/assets/embed/ei.js"></script>
-
-
-<script src="/js/home.js" type="text/javascript"></script>
-
-
-<!-- Twitter -->
-<script>!function (d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
-    if (!d.getElementById(id)) {
-        js = d.createElement(s);
-        js.id = id;
-        js.src = p + '://platform.twitter.com/widgets.js';
-        fjs.parentNode.insertBefore(js, fjs);
-    }
-}(document, 'script', 'twitter-wjs');</script>
-
-</body>
-</html>
