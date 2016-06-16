@@ -9,14 +9,325 @@ sitemap:
     lastmod: 2014-02-17T00:00:00-00:00
 ---
 
-<h1><i class="fa fa-file-text-o"></i> Release notes</h1>
-<p>
-	To get the latest NHipster news, please always look at <a href="https://github.io/nhipster/" target="_blank"><i class="fa fa-twitter"></i> GitHub</a>
-</p>
-<ul>
-  {% for post in site.posts %}
-    <li>
-      <a href="{{ post.url }}">{{ post.title }}</a>
-    </li>
-  {% endfor %}
-</ul>
+<h1><i class="fa fa-file-text-o"></i> Hello World </h1>
+
+<article class="markdown-body entry-content" itemprop="text"><h1><a id="user-content-hello-world" class="anchor" href="#hello-world" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Hello World</h1>
+
+    <h2><a id="user-content-run-with-babel-node" class="anchor" href="#run-with-babel-node" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Run with babel-node</h2>
+
+    <ul>
+        <li>Step 1: Checkout the code</li>
+    </ul>
+
+    <p>check out the code.</p>
+
+<pre><code>git clone https://github.com/easynode/easynode-template.git
+
+    git branch -r   //show remote branchs
+
+
+    hujiabaos-MacBook-Pro:easynode-template hujiabao$ git branch -r
+    origin/HEAD -&gt; origin/master
+    origin/helloworld
+    origin/master
+
+
+    git checkout origin/helloworld
+</code></pre>
+
+    <ul>
+        <li>Step 2: Generate Scaffolding</li>
+    </ul>
+
+    <p>By running  <code>sh init_project.sh</code> to generate scaffolding, In the making the scaffolding, it will ask you to enter the below four parameters to replace the below  macro definistions:{COMPANY},{PROJECT},{AUTHOR},{PORT}</p>
+
+    <ul>
+        <li>compnay'name (dot disallowed)</li>
+        <li>project name (dot disallowed)</li>
+        <li>web port</li>
+        <li>author name</li>
+    </ul>
+
+<pre><code>current working directory is :
+    /Users/hujiabao/workspace_docker/easynode-template/easynode-template/easynode-template/easynode-template
+    now it is:
+    Wed Jun 15 21:13:08 CST 2016
+    welcome to easnynode!
+    Please input company'name:
+    netease
+    Please input project'name:
+    stock
+    Please input http server's port:
+    8899
+    Please input author's name:
+    hjb
+    Company: netease
+    Project: monitor
+    AUTHOR: hjb
+    PORT: 8899
+</code></pre>
+
+    <ul>
+        <li>Step 3: Install the dependencies</li>
+    </ul>
+
+    <p>In the same directory as the file package.json, run <code>npm install</code></p>
+
+    <ul>
+        <li><p>Step 4: Run Hello World</p>
+
+<pre><code>cd bin
+    sh dev_start.sh
+</code></pre>
+
+            <p>You open the http:://127.0.0.1:8899 in the browser, You will see the output "Hello World!"</p></li>
+    </ul>
+
+    <h4><a id="user-content-files-descriptions" class="anchor" href="#files-descriptions" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Files Descriptions</h4>
+
+    <ul>
+        <li>plugins/views/index.html</li>
+    </ul>
+
+    <p>This is a simple static page</p>
+
+<pre><code> &lt;!DOCTYPE html&gt;
+    &lt;html lang="en"&gt;
+    &lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+    Hello World!
+    &lt;/body&gt;
+    &lt;/html&gt;
+</code></pre>
+
+    <ul>
+        <li>netease.monitor.backend.controllers.Controllers.js</li>
+    </ul>
+
+<pre><code>var assert = require('assert');
+    var logger = using('easynode.framework.Logger').forFile(__filename);
+    var GenericObject = using('easynode.GenericObject');
+    var fs = require('co-fs');
+    var FileService =  using('easynode.framework.util.FileService');
+    var multipart = require('co-multipart');
+    var f =  require('fs');
+    var util = require('util');
+    var thunkify = require('thunkify');
+
+    (function () {
+    /**
+    * Class Controllers
+    *
+    * @class netease.monitor.backend.controllers.Controllers
+    * @extends easynode.GenericObject
+    * @since 0.1.0
+    * @author allen.hu
+    * */
+    class Controllers extends GenericObject
+    {
+    /**
+    * 构造函数。
+    *
+    * @method 构造函数
+    * @since 0.1.0
+    * @author allen.hu
+    * */
+    constructor()
+    {
+    super();
+    //调用super()后再定义子类成员。
+    }
+
+
+    /**
+    * @api:
+    * @apiDescription: 首页
+    * @apiName {}
+    * @apiGroup {}
+    * @apiPermission {}
+    * @apiSuccess {} {} {}
+    * @apiVersion {}
+    * */
+    static home(app){
+    return function *(){
+    yield this.render('index',{});
+    }
+    }
+
+
+    getClassName()
+    {
+    return EasyNode.namespace(__filename);
+    }
+    }
+
+    module.exports = Controllers;
+    })();
+</code></pre>
+
+    <ul>
+        <li>netease.monitor.backend.routes.Routes.js</li>
+    </ul>
+
+<pre><code>'use strict'
+
+    var assert = require('assert');
+    var logger = using('easynode.framework.Logger').forFile(__filename);
+    var GenericObject = using('easynode.GenericObject');
+    var S = require('string');
+    var thunkify = require('thunkify');
+
+    import Controllers from '../controllers/Controllers';
+
+
+    (function () {
+    /**
+    * Class Routes
+    *
+    * @class netease.monitor.backend.routes.Routes
+    * @extends easynode.GenericObject
+    * @since 0.1.0
+    * @author allen.hu
+    * */
+    class Routes extends GenericObject
+    {
+    /**
+    * 构造函数。
+    *
+    * @method 构造函数
+    * @since 0.1.0
+    * @author allen.hu
+    * */
+    constructor()
+    {
+    super();
+    //调用super()后再定义子类成员。
+    }
+
+    static defineRoutes(httpServer)
+    {
+    Routes.addRoute(httpServer);
+
+    httpServer.addTemplateDirs('plugins/views');
+    }
+
+    static addRoute(httpServer)
+    {
+    httpServer.addRoute('get', '/', Controllers.home(httpServer));
+    }
+
+    getClassName()
+    {
+    return EasyNode.namespace(__filename);
+    }
+    }
+
+    module.exports  = Routes;
+    })();
+</code></pre>
+
+    <ul>
+        <li>netease.monitor.backend.Main.js</li>
+    </ul>
+
+<pre><code>var assert = require('assert');
+    var logger = using('easynode.framework.Logger').forFile(__filename);
+    var GenericObject = using('easynode.GenericObject');
+    var S = require('string');
+    var thunkify = require('thunkify');
+    var Routes = using('netease.monitor.backend.routes.Routes');
+    var MySqlDataSource = using('easynode.framework.db.MysqlDataSource');
+    var HTTPUtil =  using('easynode.framework.util.HTTPUtil');
+
+    (function () {
+    /**
+    * Class Main
+    *
+    * @class netease.monitor.backend.Main
+    * @extends easynode.GenericObject
+    * @since 0.1.0
+    * @author allen.hu
+    * */
+    class Main extends GenericObject
+    {
+    /**
+    * 构造函数。
+    *
+    * @method 构造函数
+    * @since 0.1.0
+    * @author allen.hu
+    * */
+    constructor()
+    {
+    super();
+    //调用super()后再定义子类成员。
+    }
+
+    static * main(){
+
+    //HTTP Server
+    var KOAHttpServer =  using('easynode.framework.server.http.KOAHttpServer');
+    var httpPort = S(EasyNode.config('http.server.port','7000')).toInt();
+    var httpServer = new KOAHttpServer(httpPort);
+
+    //设置ContextHook,
+    httpServer.setActionContextListener({
+    onCreate: function (ctx) {
+    console.log("onCreate");
+    return function * () {
+    };
+    },
+    onDestroy: function (ctx) {
+    console.log("onDestroy");
+    return function * () {
+
+    };
+    },
+
+    onError: function (ctx, err) {
+    console.log("onError");
+    return function * () {
+    };
+    }
+    });
+
+    httpServer.name = EasyNode.config('http.server.name','netease-monitor-Service');
+    Routes.defineRoutes(httpServer);
+    yield httpServer.start();
+    }
+
+    getClassName()
+    {
+    return EasyNode.namespace(__filename);
+    }
+    }
+
+    module.exports = Main;
+    })();
+</code></pre>
+
+    <h2><a id="user-content-run-with-node-in-the-container" class="anchor" href="#run-with-node-in-the-container" aria-hidden="true"><svg aria-hidden="true" class="octicon octicon-link" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Run with node in the container</h2>
+
+    <ul>
+        <li>Step 1: Build the image</li>
+    </ul>
+
+<pre><code>docker build -t easynode-helloworld:0.0.1 .
+</code></pre>
+
+    <ul>
+        <li>Step 2: Run the container</li>
+    </ul>
+
+<pre><code>docker run -d --net=host -e PORT=8899 easynode-helloworld:0.0.1 sh start.sh
+</code></pre>
+
+    <ul>
+        <li>Step 3: See the output</li>
+    </ul>
+
+    <p>You open the http:://127.0.0.1:8899 in the browser, You will see the output "Hello World!"</p>
+</article>

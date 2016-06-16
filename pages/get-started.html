@@ -9,14 +9,91 @@ sitemap:
     lastmod: 2014-02-17T00:00:00-00:00
 ---
 
-<h1><i class="fa fa-file-text-o"></i> Release notes</h1>
-<p>
-	To get the latest NHipster news, please always look at <a href="https://github.io/nhipster/" target="_blank"><i class="fa fa-twitter"></i> GitHub</a>
-</p>
-<ul>
-  {% for post in site.posts %}
-    <li>
-      <a href="{{ post.url }}">{{ post.title }}</a>
-    </li>
-  {% endfor %}
-</ul>
+<h1><i class="fa fa-file-text-o"></i> Get Started </h1>
+
+<h2> Creating a New EasyNode Project </h2>
+
+<h3> Create a new app and run with babel-node </h3>
+
+<pre><code>
+    git clone https://github.com/easynode/easynode-template.git
+    git checkout origin/helloworld
+    sh init_project.sh
+    //There, you input company's name, project's name, port, author
+    npm install
+</code></pre>
+
+<p> Now lift the server </p>
+<pre><code>
+    cd bin
+    sh dev_start.sh
+</code></pre>
+
+At this point, if you visit (http://localhost:8899/) you will see the default home page.
+Now, let's get EasyNode to do cool stuff.
+
+<h3> Create a new app and run with node in the container</h3>
+
+* Step 1: run the container
+```
+docker run -d hujb2000/easynode:6.2.0 /bin/bash
+
+The command will output the container id:
+ef35b98c9cece510b21d2aae6b1501424877d304408eb11b634de6b0f8f69455
+```
+
+* Step 2: Copy the code of easynode-helloworld to your host's directory
+
+```
+docker cp ef35:/usr/src/easynode/examples/easynode-helloworld easynode-helloword
+```
+
+mount the easynode-helloworld directory to the container:
+
+```
+docker run -ti -v `pwd`/easynode-helloworld:/usr/src/app -w /usr/src/app/ hujb2000/easynode:6.2.0 /bin/bash
+```
+
+* Step 3: generate the Scaffolding
+
+```
+root@8fac0aa67200:/usr/src/app# sh init_project.sh
+current working directory is :
+/usr/src/app
+now it is:
+Thu Jun 16 04:24:57 UTC 2016
+welcome to easnynode!
+Please input company'name:
+netease
+Please input project'name:
+monitor
+Please input http server's port:
+8899
+Please input author's name:
+hjb
+sed: can't read : No such file or directory
+sed: can't read : No such file or directory
+sed: can't read : No such file or directory
+sed: can't read : No such file or directory
+Company: netease
+Project: monitor
+AUTHOR: hjb
+PORT: 8899
+root@8fac0aa67200:/usr/src/app#
+```
+
+* Step 4: move the dependencies.
+```
+root@8fac0aa67200:/usr/src/app# mv ../easynode/node_modules/ .
+```
+
+* Step 5: Run the container
+
+```
+cd bin
+sh dev_start.sh
+```
+You open the http://192.168.99.100:8899(the ip is assigned to the container) in the browser, You will  see the output "Hello World!".
+
+
+
