@@ -1,0 +1,117 @@
+---
+layout: default
+title: Release notes
+permalink: /ref_koa/
+redirect_from:
+  - /ref_koa.html
+sitemap:
+    priority: 0.4
+    lastmod: 2014-02-17T00:00:00-00:00
+---
+
+<h1><i class="fa fa-file-text-o"></i> KOA</h1>
+<p>
+    <a href="https://github.com/koajs/koa">KOA</a> is the next generation web framework for node.js , It's use of generators also greatly increases the readability and robustness of your application. Koajs is the first web framework built from the ground up using generators.
+</p>
+
+<p>
+   Koa is a new web framework designed by the team behind Express, which aims to be a smaller, more expressive, and more robust foundation for web applications and APIs. Through leveraging generators Koa allows you to ditch callbacks and greatly increase error-handling. Koa does not bundle any middleware within core, and provides an elegant suite of methods that make writing servers fast and enjoyable.
+</p>
+
+<h2>Application</h2>
+
+<p>
+A Koa application is an object containing an array of middleware generator functions which are composed and executed in a stack-like manner upon request. Koa is similar to many other middleware systems that you may have encountered such as Ruby's Rack, Connect, and so on - however a key design decision was made to provide high level "sugar" at the otherwise low-level middleware layer. This improves interoperability, robustness, and makes writing middleware much more enjoyable.
+
+This includes methods for common tasks like content-negotiation, cache freshness, proxy support, and redirection among others. Despite supplying a reasonably large number of helpful methods Koa maintains a small footprint, as no middleware are bundled.
+</p>
+
+<p>
+    The obigatory hello world application:
+</p>
+<pre><code>
+    var koa = require('koa');
+    var app = koa();
+
+    app.use(function *(){
+    this.body = 'Hello World';
+    });
+
+    app.listen(3000);
+
+</code></pre>
+
+<h2> Cascading </h2>
+
+<p>Koa middleware cascade in a more traditional way as you may be used to with similar tools - this was previously difficult to make user friendly with node's use of callbacks. However with generators we can achieve "true" middleware. Contrasting Connect's implementation which simply passes control through series of functions until one returns, Koa yields "downstream", then control flows back "upstream".
+
+The following example responds with "Hello World", however first the request flows through the x-response-time and logging middleware to mark when the request started, then continue to yield control through the response middleware. When a middleware invokes yield next the function suspends and passes control to the next middleware defined. After there are no more middleware to execute downstream, the stack will unwind and each middleware is resumed to perform its upstream behaviour.
+</p>
+
+<pre><code>
+    var koa = require('koa');
+    var app = koa();
+
+    // x-response-time
+   app.use(function *(next){
+        // (1) enter into the route
+        var start = new Date;
+        yield next;
+        // (5) enter into the x-response-time middleware again. record the response time by this middleware
+        var ms = new Date - start;
+        this.set('X-Response-Time', ms + 'ms');
+        // (6) return this.body.
+    });
+
+    // logger
+    app.use(function *(next){
+        // (2) enter into the logger middleware
+        var start = new Date;
+        yield next;
+        // (4) enter into the logger middleware again. record the response time by this middleware
+        var ms = new Date - start;
+        console.log('%s %s - %s', this.method, this.url, ms);
+    });
+
+    // response
+
+    app.use(function *(){
+        // (3) can't capture the downstream, ending capture, now bubble to upstream
+        this.body = 'Hello World';
+    });
+
+    app.listen(3000);
+</code></pre>
+
+
+<h2>Context</h2>
+
+<p>A Koa Context encapsulates node's request and response objects into a single object which provides many helpful methods for writing web applications and APIs. These operations are used so frequently in HTTP server development that they are added at this level instead of a higher level framework, which would force middleware to re-implement this common functionality.
+</p>
+<p>
+    A Context is created per request, and is referenced in middleware as the receiver, or the this identifier, as shown in the following snippet:
+</p>
+
+<pre><code>
+    app.use(function *(){
+    this; // is the Context
+    this.request; // is a koa Request
+    this.req; // Node's request object
+    this.response; // is a koa Response
+    this.res; // Node's response object
+    });
+</code></pre>
+
+<ul>
+    <li>ctx.app: Application instance reference</li>
+    <li>ctx.cookies.get(name[,options]): Get cookie name with options</li>
+    <li>ctx.throw([msg],[status],[properties]): Helper method to throw an error with a .status property defaulting to 500 that will allow Koa to respond appropriately</li>
+</ul>
+
+<h2>About Generator function </h2>
+
+<p>
+    Different from the ordinary function, generator functions use "function *" to function statement  to support the key keyword statement yield. Function generator is a new syntax defined by ECMAScript 6, want to understand its basic usage, as well as how to use generator function to achieve  the asynchronous characteristics of the JS code without having to write a large number of callback functions.
+
+    You can reference this <a href="http://blog.stevensanderson.com/2013/12/21/experiments-with-koa-and-javascript-generators/">blog</a>
+</p>
