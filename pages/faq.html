@@ -16,3 +16,33 @@ sitemap:
 <p>
     Barely - check out the benchmarks in our readme, the numbers are more than fine, and there's no substitute for proper horizontal scaling.
 </p>
+
+
+<h2>Local Variable affected the param</h2>
+<pre><code>
+    getUser(id){
+        var me = this;
+        return function *(){
+
+        try {
+        var id = id || 0 ;
+        console.log("id=",id);
+        }
+    }
+    getUser(1);//There ouput 'id = 0'
+
+    should change to
+
+    getUser(id){
+        var me = this;
+        return function *(){
+
+            try {
+                var id2 = id || 0 ;
+                console.log("id=",id2);
+            }
+        }
+    getUser(1);//There ouput 'id = 1'
+
+
+</code></pre>
